@@ -19,5 +19,8 @@ function señal(señal = "") {
   console.log(senal);
 })("Gordon");
 
-let myAdd: (baseValue: number, increment: number) => number = function (x: number, y: number): number { return x + y; };
-console.log(myAdd(1,1));
+let myAdd_number: (baseValue: number, increment: number) => number = function (x: number, y: number): number { return x + y; };
+let myAdd_string: (baseValue: number, increment: number) => string = function (x: number, y: number): string { return x + "" + y; };
+
+console.log(myAdd_number(1,1));
+console.log(myAdd_string(1,1));
