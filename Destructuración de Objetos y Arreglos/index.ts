@@ -27,4 +27,8 @@
   console.log(`${b}`);
 
 
+  var y,z;
+  ({ y,z } = { y: "y", z: "z" });
+  console.log(`${y} ${z}`);
+
 })();
