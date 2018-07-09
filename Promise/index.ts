@@ -1,5 +1,5 @@
 (function ejecutar(){
-  let prom1 = new Promise(function(resolve:any,reject:any){
+  let prom1 = new Promise((resolve:any,reject:any)=>{
     setTimeout(() => {
       resolve();
       reject();

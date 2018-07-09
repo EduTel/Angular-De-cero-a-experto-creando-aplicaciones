@@ -22,4 +22,6 @@ tsc
 
 
 ***Dictionary***
-Grave accent  
+* Grave accent  
+* ECMAScript 6 is also known as ES6 and ECMAScript 2015
+
