@@ -20,6 +20,17 @@ tsc name.ts -watch
 tsc -init  
 tsc  
 
+***ng***
+* ***Crear proyecto con prefijo en los componentes***  
+**ng new nggallery --prefix ng**  
+**ng new nggallery --p 1000**  
+* ***descargar dependencias***  
+**npm install**
+* ***Ejecutar Angular***  
+**ng serve --open** || npm start 
+* ***Crear componente***  
+**ng generate component nuevo**  
+
 
 ***Dictionary***
 * Grave accent  
