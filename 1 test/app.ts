@@ -1,9 +1,9 @@
 
 // Uso de Let y Const
-var nombre = "Ricardo Tapia";
-var edad = 23;
+let nombre:string = "Ricardo Tapia";
+let edad:number = 23;
 
-var PERSONAJE = {
+const PERSONAJE:{nombre:string,edad:number} = {
   nombre: nombre,
   edad: edad
 };
@@ -15,7 +15,7 @@ interface superheroe {
   nombre:string,
   artesMarciales: string[]
 }
-var batman: superheroe = {
+let batman: superheroe = {
   nombre: "Bruno Díaz",
   artesMarciales: ["Karate","Aikido","Wing Chun","Jiu-Jitsu"]
 }
@@ -24,20 +24,20 @@ var batman: superheroe = {
 function resultadoDoble( a, b ){
   return (a + b) * 2
 }
-(a, b)=>{
-  return (a + b) * 2
-}
+console.log(((a: number, b: number)=>(a + b) * 2)(1,2));
+
+let resultadoDoble_row = (a:number, b:number) => (a + b) * 2;
 
 // Función con parametros obligatorios, opcionales y por defecto
 // donde NOMBRE = obligatorio
 //       PODER  = opcional
 //       ARMA   = por defecto = "arco"
-function getAvenger(nombre, poder?, arma ="arco" ){
-  var mensaje;
+function getAvenger(nombre:string, poder?:String, arma:string ="arco" ){
+  let mensaje:string;
   if( poder ){
-     mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
+    mensaje = `${nombre} tiene el poder de: ${poder} y un arma: ${arma}`;
   }else{
-     mensaje = nombre + " tiene un " + poder
+    mensaje =` ${nombre} tiene un ${poder}`
   }
 };
 // Cree una clase que permita manejar la siguiente estructura
@@ -47,7 +47,7 @@ function getAvenger(nombre, poder?, arma ="arco" ){
 //   * altura
 // También un método que calcule el área  =  base * altura,
 // ese método debe de retornar un numero.
-class rectangulo {
+class Rectangulo {
   base: number;
   altura: number;
   constructor(base: number, altura: number) {
@@ -58,6 +58,6 @@ class rectangulo {
     return this.base * this.altura;
   }
 }
-let figura: rectangulo = new rectangulo(10,2);
+let figura: Rectangulo = new Rectangulo(10,2);
 console.log(figura.area());
 
