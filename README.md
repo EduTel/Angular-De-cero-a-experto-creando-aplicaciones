@@ -5,6 +5,7 @@ npm -v
 tsc -v  
 ionic -v  
 npm install -g @angular/cli  
+npm install -g tslint  
 ***Opcional - Configurar GIT***  
 git config --global user.name "name"  
 git config --global user.email gmail@gmail.com  
@@ -34,5 +35,8 @@ tsc
 
 ***Dictionary***
 * Grave accent  
-* ECMAScript 6 is also known as ES6 and ECMAScript 2015
+* ECMAScript 6 is also known as ES6 and ECMAScript 2015  
+
+***preguntas***
+**JSLint, JSHint y ESlist**
 
