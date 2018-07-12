@@ -3,6 +3,6 @@
 filter: brightness(100%) invert(100%);
 -webkit-filter: brightness(100%) invert(100%);
 }
-.navbar{
-  color: white !important;
+.main-container{
+  margin-top: 20px;
 }
