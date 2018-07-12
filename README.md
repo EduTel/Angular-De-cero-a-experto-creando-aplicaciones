@@ -6,6 +6,10 @@ tsc -v
 ionic -v  
 npm install -g @angular/cli  
 npm install -g tslint  
+
+npm install bootstrap --save  
+npm install jquery --save  
+npm install popper.js --save   
 ***Opcional - Configurar GIT***  
 git config --global user.name "name"  
 git config --global user.email gmail@gmail.com  
