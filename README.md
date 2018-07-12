@@ -1,5 +1,5 @@
 # Comandos a usar  
-***instalaciones previas***  
+***instalaciones previas***
 node -v  
 npm -v  
 tsc -v  
@@ -10,7 +10,8 @@ npm install -g tslint
 npm install bootstrap --save  
 npm install jquery --save  
 npm install popper.js --save   
-***Opcional - Configurar GIT***  
+
+***Opcional - Configurar GIT***
 git config --global user.name "name"  
 git config --global user.email gmail@gmail.com  
 git init  
@@ -44,4 +45,8 @@ tsc
 
 ***preguntas***
 **JSLint, JSHint y ESlist**
+
+***Links***
+https://angular.io/guide/router  
+
 
