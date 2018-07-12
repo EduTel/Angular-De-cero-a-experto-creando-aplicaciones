@@ -4,12 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './shared/home/home.component';
+import { WriterComponent } from './shared/writer/writer.component';
+import { AboutComponent } from './shared/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    WriterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule
