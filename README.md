@@ -10,6 +10,8 @@ npm install -g tslint
 npm install bootstrap --save  
 npm install jquery --save  
 npm install popper.js --save   
+* ***descargar dependencias***  
+**npm install**
 
 ***Opcional - Configurar GIT***
 git config --global user.name "name"  
@@ -30,8 +32,6 @@ tsc
 * ***Crear proyecto con prefijo en los componentes***  
 **ng new nggallery --prefix ng**  
 **ng new nggallery --p 1000**  
-* ***descargar dependencias***  
-**npm install**
 * ***Ejecutar Angular***  
 **ng serve --open** || npm start 
 * ***Crear componente***  
