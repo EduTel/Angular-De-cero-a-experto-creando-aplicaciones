@@ -53,6 +53,9 @@ export class WriterService {
   getWriters(): Writer[] {
     return this.Writers;
   }
+  getWriter(ìdx: string): Writer {
+    return this.Writers[ìdx];
+  }
 }
 export interface Writer {
   nombre: string;

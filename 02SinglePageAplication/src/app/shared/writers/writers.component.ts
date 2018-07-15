@@ -17,7 +17,7 @@ export class WritersComponent implements OnInit {
     console.log('ngOnInit');
     this.heroes = this._write_service.getWriters();
   }
-  viewWrite(idx: number) {
+  redirectWrite(idx: number) {
     console.log(idx);
     this._router.navigate(['/write', idx]);
   }
