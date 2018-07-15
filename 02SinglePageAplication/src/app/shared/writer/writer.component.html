@@ -1,3 +1,21 @@
-<p>
-  writer works!
-</p>
+<div class="card text-center animated fadeIn">
+  <div class="card-header">
+    <h1>{{write.nombre}}</h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+      <img *ngIf="write.nacionalidad=='Colombiano' " class="nacionalidad" src="assets/img/flags/colombia.png" alt="">
+      <img *ngIf="write.nacionalidad=='Francés' " class="nacionalidad" src="assets/img/flags/francia.png" alt="">
+      <img *ngIf="write.nacionalidad=='Alemán' " class="nacionalidad" src="assets/img/flags/germany.png" alt="">
+      <img *ngIf="write.nacionalidad=='Mexicano' " class="nacionalidad" src="assets/img/flags/mexico.png" alt="">
+      <img *ngIf="write.nacionalidad=='Estadounidense' " class="nacionalidad" src="assets/img/flags/united states.png" alt="">
+      {{write.nacionalidad}}
+      <hr>
+      {{write.nacimiento}}</h5>
+    <p class="card-text">{{write.bio}}</p>
+    <img [src]="write.img" alt="{{write.nombre}}">
+  </div>
+  <div class="card-footer text-muted">
+    <a routerLink="/writers" class="btn btn-outline-danger">Go Back</a>
+  </div>
+</div>
