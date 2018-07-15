@@ -1,0 +1,15 @@
+<h1 class='text-center'>Writes</h1>
+<br>
+<div class="card-columns">
+    <div class="card" *ngFor="let item of heroes; let i=index ">
+      <img class="card-img-top" [src]="item.img" [alt]="item.nombre">
+      <div class="card-body">
+        <h5 class="card-title">{{item.nombre}}</h5>
+        <p class="card-text">{{item.bio}}</p>
+        <p class="card-text">
+          <small class="text-muted">{{item.nacimiento}}</small>
+        </p>
+        <button (click)="viewWrite(i)" type="button" class="btn btn-outline-primary btn-block">View more</button>
+      </div>
+    </div>
+</div>

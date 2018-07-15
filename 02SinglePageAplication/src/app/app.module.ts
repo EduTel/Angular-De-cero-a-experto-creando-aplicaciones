@@ -8,8 +8,10 @@ import { WriterService } from './servicios/writes.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './shared/home/home.component';
+import { WritersComponent } from './shared/writers/writers.component';
 import { WriterComponent } from './shared/writer/writer.component';
 import { AboutComponent } from './shared/about/about.component';
+
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { AboutComponent } from './shared/about/about.component';
     AppComponent,
     NavbarComponent,
     HomeComponent,
+    WritersComponent,
     WriterComponent,
     AboutComponent
   ],
