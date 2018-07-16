@@ -6,13 +6,14 @@ import { HomeComponent } from './shared/home/home.component';
 import { WritersComponent } from './shared/writers/writers.component';
 import { AboutComponent } from './shared/about/about.component';
 import { WriterComponent } from './shared/writer/writer.component';
-
+import { ShowSearchWriterComponent } from './shared/show-search-writer/show-search-writer.component';
 
 
 const ROUTES: Routes = [
   { path: 'home', component: HomeComponent, data: { title: ',me home' } },
   { path: 'writers', component: WritersComponent, data: { title: ',me writers' } },
   { path: 'write/:id', component: WriterComponent, data: { title: ',me writer' } },
+  { path: 'ShowSearchWriterComponent/:termino', component: ShowSearchWriterComponent, data: { title: ',me search' } },
   { path: 'about', component: AboutComponent, data: { title: ',me about' } },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

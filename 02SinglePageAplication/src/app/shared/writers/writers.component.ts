@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
   // styleUrls: ['./writer.component.css']
 })
 export class WritersComponent implements OnInit {
-  private heroes: Writer[];
+  private Writer: Writer[];
   constructor(private _write_service: WriterService, private _router: Router) {
     console.log('constructor');
   }
   ngOnInit() {
     console.log('ngOnInit');
-    this.heroes = this._write_service.getWriters();
+    this.Writer = this._write_service.getWriters();
   }
   redirectWrite(idx: number) {
     console.log(idx);

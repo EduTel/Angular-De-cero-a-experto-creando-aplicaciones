@@ -70,15 +70,18 @@ export class WriterService {
     return this.Writers[ìdx];
   }
   buscar(termino: string): Writer[] {
-    const writers_find: Writer[] = [];
+    const WRITERS_FIND: Writer[] = [];
     termino = termino.toLowerCase();
     for (const iterator of this.Writers) {
-      const nombre = iterator.nombre.toUpperCase();
-      if (nombre.indexOf(termino) >= 0) {
-        writers_find.push(iterator);
+      const NOMBRE = iterator.nombre.toLowerCase();
+      console.log(NOMBRE);
+      console.log(termino);
+      if (NOMBRE.indexOf(termino) >= 0) {
+        console.log('______________________________ENTRO');
+        WRITERS_FIND.push(iterator);
       }
     }
-    return writers_find;
+    return WRITERS_FIND;
   }
 
 }

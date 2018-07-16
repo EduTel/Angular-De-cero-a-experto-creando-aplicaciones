@@ -11,6 +11,7 @@ import { HomeComponent } from './shared/home/home.component';
 import { WritersComponent } from './shared/writers/writers.component';
 import { WriterComponent } from './shared/writer/writer.component';
 import { AboutComponent } from './shared/about/about.component';
+import { ShowSearchWriterComponent } from './shared/show-search-writer/show-search-writer.component';
 
 
 
@@ -21,7 +22,8 @@ import { AboutComponent } from './shared/about/about.component';
     HomeComponent,
     WritersComponent,
     WriterComponent,
-    AboutComponent
+    AboutComponent,
+    ShowSearchWriterComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [WriterService],
