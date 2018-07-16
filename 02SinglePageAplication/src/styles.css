@@ -9,3 +9,7 @@ filter: brightness(100%) invert(100%);
 .main-container{
   margin-top: 20px;
 }
+.inline{
+  display: inline-block !important;
+  width: auto !important;
+}

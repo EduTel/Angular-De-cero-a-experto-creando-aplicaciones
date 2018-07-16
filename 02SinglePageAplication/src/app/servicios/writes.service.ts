@@ -69,6 +69,18 @@ export class WriterService {
   getWriter(ìdx: string): Writer {
     return this.Writers[ìdx];
   }
+  buscar(termino: string): Writer[] {
+    const writers_find: Writer[] = [];
+    termino = termino.toLowerCase();
+    for (const iterator of this.Writers) {
+      const nombre = iterator.nombre.toUpperCase();
+      if (nombre.indexOf(termino) >= 0) {
+        writers_find.push(iterator);
+      }
+    }
+    return writers_find;
+  }
+
 }
 export interface Writer {
   nombre: string;
