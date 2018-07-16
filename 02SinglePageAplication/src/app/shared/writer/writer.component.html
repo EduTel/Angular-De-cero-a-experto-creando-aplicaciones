@@ -1,6 +1,6 @@
 <div class="card text-center animated fadeIn">
   <div class="card-header">
-    <h1>{{write.nombre}}</h1>
+    <h1>{{write.nombre | uppercase}}</h1>
   </div>
   <div class="card-body">
     <h5 class="card-title">
@@ -9,7 +9,7 @@
       <img *ngIf="write.nacionalidad=='Alemán' " class="nacionalidad" src="assets/img/flags/germany.png" alt="">
       <img *ngIf="write.nacionalidad=='Mexicano' " class="nacionalidad" src="assets/img/flags/mexico.png" alt="">
       <img *ngIf="write.nacionalidad=='Estadounidense' " class="nacionalidad" src="assets/img/flags/united states.png" alt="">
-      {{write.nacionalidad}}
+      {{write.nacionalidad | uppercase}}
       <hr>
       {{write.nacimiento}}</h5>
     <p class="card-text">{{write.bio}}</p>
