@@ -14,12 +14,12 @@ import { Router } from '@angular/router';
 export class ShowSearchWriterComponent extends WritersComponent implements OnInit  {
   private writes: Writer[];
   private termino: string;
-  constructor(private _ActivatedRoute: ActivatedRoute, private _write_service: WriterService, private _router: Router) {
+  constructor(private _ActivatedRoute: ActivatedRoute, _write_service: WriterService, _router: Router) {
     super(_write_service, _router);
     this._ActivatedRoute.params.subscribe(parametros => {
       console.log(parametros['termino']);
       this.termino = parametros['termino'];
-      this.writes = this._write_service.buscar(parametros['termino']);
+      this.writes = _write_service.buscar(parametros['termino']);
       console.log('_______________________________________\n');
       console.log(this.writes);
     });
