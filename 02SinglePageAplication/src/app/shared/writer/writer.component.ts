@@ -18,9 +18,9 @@ export class WriterComponent implements OnInit {
     private _WriterService: WriterService
   ) {
     this._ActivatedRoute.params.subscribe(parametros => {
-      console.log(parametros['id']);
+      // console.log(parametros['id']);
       this.write = this._WriterService.getWriter(parametros['id']);
-      console.log(this.write);
+      // console.log(this.write);
     });
   }
 

@@ -17,15 +17,19 @@ export class ShowSearchWriterComponent extends WritersComponent implements OnIni
   constructor(private _ActivatedRoute: ActivatedRoute, _write_service: WriterService, _router: Router) {
     super(_write_service, _router);
     this._ActivatedRoute.params.subscribe(parametros => {
-      console.log(parametros['termino']);
+      // console.log(parametros['termino']);
       this.termino = parametros['termino'];
       this.writes = _write_service.buscar(parametros['termino']);
-      console.log('_______________________________________\n');
-      console.log(this.writes);
+      // console.log('_______________________________________\n');
+      // console.log(this.writes);
     });
   }
-
   ngOnInit() {
+
+  }
+  alert(indice: number) {
+    console.log('****************alert****************');
+    console.log('indice:' + indice);
   }
 
 }

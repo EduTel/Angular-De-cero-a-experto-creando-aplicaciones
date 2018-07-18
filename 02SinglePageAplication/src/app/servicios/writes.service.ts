@@ -74,10 +74,10 @@ export class WriterService {
     termino = termino.toLowerCase();
     for (const iterator of this.Writers) {
       const NOMBRE = iterator.nombre.toLowerCase();
-      console.log(NOMBRE);
-      console.log(termino);
+      // console.log(NOMBRE);
+      // console.log(termino);
       if (NOMBRE.indexOf(termino) >= 0) {
-        console.log('______________________________ENTRO');
+        // console.log('______________________________ENTRO');
         WRITERS_FIND.push(iterator);
       }
     }

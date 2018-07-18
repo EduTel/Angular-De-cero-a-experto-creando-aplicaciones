@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WritersComponent } from '../writers/writers.component';
 
 import { WriterService, Writer } from '../../servicios/writes.service';
@@ -13,9 +13,12 @@ import { Router } from '@angular/router';
 export class CardComponent extends WritersComponent implements OnInit {
   @Input() item: any = {};
   @Input() index: number;
+  @Output() consoleEmitter: EventEmitter<any> = new EventEmitter();
   constructor(_write_service: WriterService, _router: Router) {
     super(_write_service, _router);
   }
-
   ngOnInit() {}
+  vote() {
+    this.consoleEmitter.emit(this.index);
+  }
 }

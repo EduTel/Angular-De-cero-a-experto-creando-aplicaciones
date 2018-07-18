@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
   buscar(_termino: string) {
-    console.log(_termino);
+    // console.log(_termino);
     this._router.navigate(['/ShowSearchWriterComponent', _termino]);
   }
 

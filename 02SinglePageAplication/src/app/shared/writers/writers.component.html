@@ -1,5 +1,5 @@
 <h1 class='text-center'>Writes</h1>
 <br>
 <div class="card-columns">
-    <app-card [item]='item' [index]='i' *ngFor="let item of Writer; let i=index"></app-card>
+    <app-card [item]='item' [index]='i' (alert)='i' *ngFor="let item of Writer; let i=index"></app-card>
 </div>
