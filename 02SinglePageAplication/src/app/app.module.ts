@@ -12,6 +12,7 @@ import { WritersComponent } from './shared/writers/writers.component';
 import { WriterComponent } from './shared/writer/writer.component';
 import { AboutComponent } from './shared/about/about.component';
 import { ShowSearchWriterComponent } from './shared/show-search-writer/show-search-writer.component';
+import { CardComponent } from './shared/card/card.component';
 
 
 
@@ -23,7 +24,8 @@ import { ShowSearchWriterComponent } from './shared/show-search-writer/show-sear
     WritersComponent,
     WriterComponent,
     AboutComponent,
-    ShowSearchWriterComponent
+    ShowSearchWriterComponent,
+    CardComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [WriterService],
