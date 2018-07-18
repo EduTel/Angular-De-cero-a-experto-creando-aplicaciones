@@ -21,4 +21,8 @@ export class WritersComponent implements OnInit {
     // console.log(idx);
     this._router.navigate(['/write', idx]);
   }
+  alert(indice: any) {
+    console.log('****************alert****************');
+    console.log('indice:' + indice);
+  }
 }

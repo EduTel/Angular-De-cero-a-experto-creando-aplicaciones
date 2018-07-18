@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CardComponent extends WritersComponent implements OnInit {
   @Input() item: any = {};
-  @Input() index: any;
+  @Input() pocicion: any;
   @Output() consoleEmitter: EventEmitter<any> = new EventEmitter();
   constructor(_write_service: WriterService, _router: Router) {
     super(_write_service, _router);
