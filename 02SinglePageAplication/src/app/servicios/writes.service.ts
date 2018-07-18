@@ -72,12 +72,16 @@ export class WriterService {
   buscar(termino: string): Writer[] {
     const WRITERS_FIND: Writer[] = [];
     termino = termino.toLowerCase();
+    let contador = 0;
     for (const iterator of this.Writers) {
       const NOMBRE = iterator.nombre.toLowerCase();
+      iterator['id'] = contador;
+      contador++;
       // console.log(NOMBRE);
       // console.log(termino);
       if (NOMBRE.indexOf(termino) >= 0) {
-        // console.log('______________________________ENTRO');
+        console.log('______________________________ENTRO');
+        console.log(iterator);
         WRITERS_FIND.push(iterator);
       }
     }
