@@ -27,7 +27,7 @@ export class ShowSearchWriterComponent extends WritersComponent implements OnIni
   ngOnInit() {
 
   }
-  alert(indice: number) {
+  alert(indice: any) {
     console.log('****************alert****************');
     console.log('indice:' + indice);
   }

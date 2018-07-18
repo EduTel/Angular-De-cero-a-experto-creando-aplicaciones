@@ -12,13 +12,15 @@ import { Router } from '@angular/router';
 })
 export class CardComponent extends WritersComponent implements OnInit {
   @Input() item: any = {};
-  @Input() index: number;
+  @Input() index: any;
   @Output() consoleEmitter: EventEmitter<any> = new EventEmitter();
   constructor(_write_service: WriterService, _router: Router) {
     super(_write_service, _router);
   }
   ngOnInit() {}
-  vote() {
-    this.consoleEmitter.emit(this.index);
+  vote(p_index: any) {
+    console.log('****************vote****************\n');
+    p_index = '__' + p_index + '__';
+    this.consoleEmitter.emit(p_index);
   }
 }

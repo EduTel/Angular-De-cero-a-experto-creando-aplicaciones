@@ -11,14 +11,14 @@ import { Router } from '@angular/router';
 export class WritersComponent implements OnInit {
   private Writer: Writer[];
   constructor(private _write_service: WriterService, private _router: Router) {
-    console.log('constructor');
+    // console.log('constructor');
   }
   ngOnInit() {
-    console.log('ngOnInit');
+    // console.log('ngOnInit');
     this.Writer = this._write_service.getWriters();
   }
   redirectWrite(idx: number) {
-    console.log(idx);
+    // console.log(idx);
     this._router.navigate(['/write', idx]);
   }
 }
