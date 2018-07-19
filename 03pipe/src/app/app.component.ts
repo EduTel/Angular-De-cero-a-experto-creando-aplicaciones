@@ -1,7 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { promise } from '../../node_modules/protractor';
 
 
 @Component({
