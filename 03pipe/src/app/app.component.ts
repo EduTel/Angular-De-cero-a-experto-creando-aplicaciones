@@ -22,6 +22,6 @@ export class AppComponent {
       conocido_por: [ 'logoterapia', 'psicología', 'existencial']
     }
   };
-  cast_JSON: string = JSON.stringify(this.object);
+  cast_JSON = JSON.stringify(this.object, null, 1);
 
 }
