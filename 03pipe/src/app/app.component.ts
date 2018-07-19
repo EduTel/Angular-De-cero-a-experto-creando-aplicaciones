@@ -37,6 +37,9 @@ export class AppComponent implements OnInit {
   Observable = new Observable<string>((observer: Observer<string>) => {
     setInterval(() => observer.next(new Date().toString()), 3000);
   });
+
+  today: number = Date.now();
+
   ngOnInit() {
 
   }
