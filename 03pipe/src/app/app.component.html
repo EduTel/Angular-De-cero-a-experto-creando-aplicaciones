@@ -49,6 +49,16 @@
       <hr>
       <tr>
         <th scope="row">{{e}}</th>
+        <td>number</td>
+        <td>{{e | number}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{e}}</th>
+        <td>number</td>
+        <td>{{e | number:'.2-2'}}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{e}}</th>
         <td>number:'3.1-5'</td>
         <td>{{e | number:'3.1-5'}}</td>
       </tr>
@@ -73,7 +83,7 @@
         <td>percent:'4.3-5': stable (v6.0.9)</td>
         <td>{{e | percent:'3.3-5'}}</td>
       </tr>
-       <hr>
+      <hr>
       <tr>
         <th scope="row">{{e}}</th>
         <td>currency: stable (v6.0.9)</td>
@@ -84,7 +94,7 @@
         <td>currency:'EUR':'symbol':'1.1-5': stable (v6.0.9)</td>
         <td>{{e | currency:'EUR':'symbol':'1.1-5'}}</td>
       </tr>
-
+      <hr>
     </tbody>
   </table>
 </div>
