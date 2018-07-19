@@ -11,33 +11,34 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr class='alert alert-primary'>
         <th scope="row">{{nombre}}</th>
         <td>uppercase</td>
         <td>{{nombre|uppercase}}</td>
       </tr>
-      <tr>
+      <hr>
+      <tr class='alert alert-secondary'>
         <th scope="row">{{nombre}}</th>
         <td>lowercase</td>
         <td>{{nombre|lowercase}}</td>
       </tr>
       <hr>
-      <tr>
+      <tr class='alert alert-success'>
         <th scope="row">{{nombre}}</th>
         <td>slice 3</td>
         <td>{{nombre|slice:3}}</td>
       </tr>
-      <tr>
+      <tr class='alert alert-success'>
         <th scope="row">{{nombre}}</th>
         <td>slice:0:3</td>
         <td>{{nombre|slice:0:5}}</td>
       </tr>
-      <tr>
+      <tr class='alert alert-success'>
         <th scope="row">{{arreglo}}</th>
         <td>slice:1:5</td>
         <td>{{arreglo|slice:1:5}}</td>
       </tr>
-      <tr>
+      <tr class='alert alert-success'>
         <th scope="row">{{arreglo}}</th>
         <td>slice:4:9</td>
         <td>
@@ -47,54 +48,63 @@
         </td>
       </tr>
       <hr>
-      <tr>
+      <tr class='alert alert-danger'>
         <th scope="row">{{e}}</th>
         <td>number</td>
         <td>{{e | number}}</td>
       </tr>
-      <tr>
+      <tr class='alert alert-danger'>
         <th scope="row">{{e}}</th>
         <td>number</td>
         <td>{{e | number:'.2-2'}}</td>
       </tr>
-      <tr>
+      <tr class='alert alert-danger'>
         <th scope="row">{{e}}</th>
         <td>number:'3.1-5'</td>
         <td>{{e | number:'3.1-5'}}</td>
       </tr>
-      <tr>
+      <tr class='alert alert-danger'>
         <th scope="row">{{e}}</th>
         <td>number:'1.0-0'</td>
         <td>{{e | number:'1.0-0'}}</td>
       </tr>
-      <tr>
+      <tr class='alert alert-danger'>
         <th scope="row">{{e}}</th>
         <td>number:'1.0-0'</td>
         <td>{{e | number:'1.5-5'}}</td>
       </tr>
       <hr>
-      <tr>
+      <tr class="alert alert-info">
         <th scope="row">{{e}}</th>
         <td>percent: stable (v6.0.9)</td>
         <td>{{e | percent}}</td>
       </tr>
-      <tr>
+      <tr class="alert alert-info">
         <th scope="row">{{e}}</th>
         <td>percent:'4.3-5': stable (v6.0.9)</td>
         <td>{{e | percent:'3.3-5'}}</td>
       </tr>
       <hr>
-      <tr>
+      <tr class="alert alert-light">
         <th scope="row">{{e}}</th>
         <td>currency: stable (v6.0.9)</td>
         <td>{{e | currency}}</td>
       </tr>
-      <tr>
+      <tr class="alert alert-light">
         <th scope="row">{{e}}</th>
         <td>currency:'EUR':'symbol':'1.1-5': stable (v6.0.9)</td>
         <td>{{e | currency:'EUR':'symbol':'1.1-5'}}</td>
       </tr>
       <hr>
+      <tr class="alert alert-dark">
+        <th scope="row">{{object}}</th>
+        <td>json</td>
+        <td>
+          <pre>{{object|json}}</pre>
+          <br>
+          <pre>{{cast_JSON}}</pre>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
