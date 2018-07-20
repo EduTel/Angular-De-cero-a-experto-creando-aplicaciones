@@ -7,11 +7,12 @@ import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 
 import { CapitalizadoPipe } from './pipe/capitalisado.pipe';
+import { DomSanitizerPipe } from './dom-sanitizer.pipe';
 
 registerLocaleData(localeEs);
 
 @NgModule({
-  declarations: [AppComponent, CapitalizadoPipe],
+  declarations: [AppComponent, CapitalizadoPipe, DomSanitizerPipe],
   imports: [BrowserModule],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
