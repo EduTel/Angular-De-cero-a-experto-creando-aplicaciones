@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 
 @Component({
@@ -42,5 +42,26 @@ export class AppComponent implements OnInit {
 
   today: number = Date.now();
 
-  ngOnInit() {}
+  change = false;
+
+  set_v_password(value: any, change: boolean ): any {
+    if (value !== '') {
+      let cambiar_valor = false;
+      value = value.split('');
+      for (const iterator of value) {
+        if (value !== '*') {
+          cambiar_valor = true;
+        }
+      }
+      value = value.join();
+      if (cambiar_valor ) {
+        console.warn('*************cambiar_valor*************');
+        this.change = change;
+        return value;
+      }
+    }
+  }
+  ngOnInit() {
+
+  }
 }

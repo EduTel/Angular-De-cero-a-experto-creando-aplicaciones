@@ -158,7 +158,6 @@
         <td>bypassSecurityTrustUrl</td>
         <td>
             <a [href]="google" target="_blank">google</a>
-
         </td>
       </tr>
       <tr class="alert alert-success">
@@ -166,8 +165,20 @@
         <td>bypassSecurityTrustResourceUrl</td>
         <td>
           {{Summer_of_69}}
-          <iframe width="854" height="480" [src]="'https://www.youtube.com/embed/oOv-p3Xfhow'|domSanitizer:'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+          <iframe width="427" height="240" [src]="'https://www.youtube.com/embed/oOv-p3Xfhow'|domSanitizer:'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </td>
+      </tr>
+      <tr class="alert alert-danger">
+        <th scope="row">{{contrsena}}</th>
+        <td>
+          pipe (Personalisado)
+          <br>
+          <!--<button type="button" class="btn btn-outline-primary" (click)="set_v_password(passwordId.value,(!change)); ">Activar/Desactivar</button>-->
+          <button type="button" class="btn btn-outline-primary" (click)="change=!change">Activar/Desactivar</button>
+        </td>
+        <td>
+          <!--<input #passwordId class='form-control mr-sm-2' type="text" [value]="passwordId.value|password:change">-->
+          {{"hola"|password:change}}
         </td>
       </tr>
     </tbody>
