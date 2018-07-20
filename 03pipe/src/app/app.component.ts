@@ -2,15 +2,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 
+import {
+  DomSanitizer,
+  SafeHtml,
+  SafeStyle,
+  SafeScript,
+  SafeUrl,
+  SafeResourceUrl
+} from '@angular/platform-browser';
 import { inspect } from 'util'; // or directly
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  Summer_of_69: SafeUrl;
+  google: SafeUrl;
+  constructor(private sanitizer: DomSanitizer) {
+    this.google = 'https://www.google.com/';
+    this.Summer_of_69 = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/oOv-p3Xfhow'
+    );
+  }
   nombre = 'mi nombre';
   nombre2 = 'este es mi nombrE completO';
   arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
