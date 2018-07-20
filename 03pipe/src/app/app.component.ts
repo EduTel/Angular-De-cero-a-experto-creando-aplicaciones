@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   nombre = 'mi nombre';
+  nombre2 = 'este es mi nombrE completO';
   arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   e = Math.PI;
