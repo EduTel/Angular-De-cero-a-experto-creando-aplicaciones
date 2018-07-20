@@ -1,6 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
+
+import { inspect } from 'util'; // or directly
+const util = require('util');
 
 
 @Component({
@@ -15,7 +18,7 @@ export class AppComponent implements OnInit {
 
   e = Math.PI;
 
-  object = {
+  object: Object = {
     Libro: 'el hombre en busca de sentido',
     Hojas: '190',
     Autor: {
@@ -27,11 +30,11 @@ export class AppComponent implements OnInit {
     }
   };
   cast_JSON = JSON.stringify(this.object, null, 1);
-  Promise = new Promise((resolve, reject) => {
+  promise = new Promise((resolve, reject) => {
     // Llamamos a resolve(...) cuando lo que estabamos haciendo finaliza con éxito, y reject(...) cuando falla.
     // En este ejemplo, usamos setTimeout(...) para simular código asíncrono.
     // En la vida real, probablemente uses algo como XHR o una API HTML5.
-    setTimeout(function () {
+    setTimeout(function() {
       resolve('¡Éxito!'); // ¡Todo salió bien!
     }, 3000);
   });
@@ -41,7 +44,5 @@ export class AppComponent implements OnInit {
 
   today: number = Date.now();
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 }

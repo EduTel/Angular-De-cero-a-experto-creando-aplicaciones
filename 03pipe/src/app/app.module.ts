@@ -5,16 +5,15 @@ import { AppComponent } from './app.component';
 
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
+
+import { CapitalizadoPipe } from './pipe/capitalisado.pipe';
+
 registerLocaleData(localeEs);
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, CapitalizadoPipe],
+  imports: [BrowserModule],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
