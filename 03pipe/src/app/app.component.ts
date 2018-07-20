@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 
 import { inspect } from 'util'; // or directly
-const util = require('util');
 
 
 @Component({

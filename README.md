@@ -38,6 +38,8 @@ tsc
 **ng generate component nuevo**  
 **ng g c components/foother -is**  
 **ng g c components/portafolio --spec false -is**  
+* ***Crear pipe***  
+**ng generate pipe nuevo**  
 
 ***Dictionary***
 * Grave accent  
