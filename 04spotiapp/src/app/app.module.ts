@@ -10,6 +10,7 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 // rutas
 import { AppRoutingModule } from './app-routing.module';
+import { SpotifyService } from './services/spotify.service';
 
 
 
@@ -26,7 +27,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    SpotifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
