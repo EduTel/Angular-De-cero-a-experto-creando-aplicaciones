@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 // componentes
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -8,6 +10,8 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 // rutas
 import { AppRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
   declarations: [
@@ -18,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
     NavbarComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],

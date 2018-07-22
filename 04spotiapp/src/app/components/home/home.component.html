@@ -1,1 +1,18 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione eius voluptatem voluptatum adipisci placeat itaque harum dignissimos quae numquam facilis dolore, cum sit delectus. Nemo enim optio nobis sed!
+<div>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Capital</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of paises; let i = index">
+        <th scope="row">{{i}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.capital}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

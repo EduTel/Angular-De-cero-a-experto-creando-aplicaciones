@@ -52,5 +52,7 @@ tsc
 
 ***Links***
 https://angular.io/guide/router  
+https://angular.io/guide/http  
+https://angular.io/guide/structural-directives  
 
 
