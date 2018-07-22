@@ -38,6 +38,8 @@ tsc
 **ng generate component nuevo**  
 **ng g c components/foother -is**  
 **ng g c components/portafolio --spec false -is**  
+* ***Crear router***  
+**ng generate module app-routing --flat --module=app**
 * ***Crear pipe***  
 **ng generate pipe nuevo**  
 
