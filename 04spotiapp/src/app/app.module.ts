@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SpotifyService } from './services/spotify.service';
 import { NodataPipe } from './pipe/nodata.pipe';
+import { CardComponent } from './components/card/card.component';
 
 
 
@@ -22,7 +23,8 @@ import { NodataPipe } from './pipe/nodata.pipe';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    NodataPipe
+    NodataPipe,
+    CardComponent
   ],
   imports: [
     HttpClientModule,

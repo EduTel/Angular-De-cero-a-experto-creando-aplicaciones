@@ -1,15 +1,1 @@
-<div class="card-columns">
-  <!--<div *ngFor="let row of releases.albums.items" class="card">-->
-  <div *ngFor="let row of releases" class="card">
-    <div class="card-header"> {{row.name}} </div>
-    <img class="card-img-top" [src]="row.images[0].url|nodata:'img'" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{row.release_date}}</h5>
-      <p class="card-text">
-          <a *ngFor="let item of row.artists" href="#" class="badge badge-primary">
-            {{item.name}}
-          </a>
-      </p>
-    </div>
-  </div>
-</div>
+<app-card [data]='releases' ></app-card>

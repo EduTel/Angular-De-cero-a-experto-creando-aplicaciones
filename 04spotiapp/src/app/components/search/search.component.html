@@ -4,18 +4,13 @@
   </div>
 </div>
 <hr>
-<div class="card-columns">
-    <!--<div *ngFor="let row of releases.albums.items" class="card">-->
-    <div *ngFor="let row of artist;let i= index" class="card {{i}}" >
-      <div class="card-header"> {{row.name|nodata:'data'}} </div>
-      <img class="card-img-top" [src]="row.images[0]|nodata:'img'" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">followers: {{row.followers.total|nodata:'data'}}</h5>
-        <!-- <p class="card-text">
-            <a *ngFor="let item of row.artists" href="#" class="badge badge-primary">
-              {{item.name}}
-            </a>
-        </p> -->
-      </div>
+<app-card [data]='artist' ></app-card>
+<!-- <div class="card-columns">
+  <div *ngFor="let row of artist;let i= index" class="card {{i}}" >
+    <div class="card-header"> {{row.name|nodata:'data'}} </div>
+    <img class="card-img-top" [src]="row.images[0]|nodata:'img'" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">followers: {{row.followers.total|nodata:'data'}}</h5>
     </div>
   </div>
+</div> -->

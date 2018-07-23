@@ -17,7 +17,7 @@ export class NodataPipe implements PipeTransform {
       }
     } else if (arg === 'data') {
       if (_value === null || _value === '') {
-        return 'No data';
+        return '';
       }
     }
     return _value;
