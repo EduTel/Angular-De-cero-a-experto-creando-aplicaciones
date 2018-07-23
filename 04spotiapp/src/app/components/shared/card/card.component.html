@@ -1,5 +1,5 @@
 <hr>
-<div class="card-columns">
+<div class="card-columns animated fadeIn">
     <div *ngFor="let row of data;let i= index" class="card">
       <div class="card-header"> {{row.name|nodata:'data'}} </div>
       <img class="card-img-top" [src]="row.images[0]|nodata:'img'" alt="Card image cap">

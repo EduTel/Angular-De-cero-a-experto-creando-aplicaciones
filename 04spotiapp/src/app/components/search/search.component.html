@@ -4,6 +4,7 @@
   </div>
 </div>
 <hr>
+<app-loading *ngIf="loading" ></app-loading>
 <app-card [data]='artist' ></app-card>
 <!-- <div class="card-columns">
   <div *ngFor="let row of artist;let i= index" class="card {{i}}" >

@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   releases: any[];
+  loading = true;
   constructor(private SSpotify: SpotifyService ) {
     this.SSpotify.get_new_releases().subscribe((data: any) => {
       this.releases = data;
+      this.loading = false;
       console.log(this.releases);
     });
   }
