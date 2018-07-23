@@ -7,9 +7,9 @@ export class NodataPipe implements PipeTransform {
 
   transform(_value= null, arg: string): any {
     if (arg === 'img') {
-      console.log('****************img****************');
-      console.log(_value);
-      console.log('********************************');
+      // console.log('****************img****************');
+      // console.log(_value);
+      // console.log('********************************');
       if (_value === null || _value === '') {
         return 'assets/noimage.jpg';
       } else {

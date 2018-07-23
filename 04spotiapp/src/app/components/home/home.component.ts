@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     this.SSpotify.get_new_releases().subscribe((data: any) => {
       this.releases = data;
       this.loading = false;
-      console.log(this.releases);
+      // console.log(this.releases);
     });
   }
   ngOnInit() {

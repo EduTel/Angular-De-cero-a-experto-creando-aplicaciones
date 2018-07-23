@@ -1,12 +1,12 @@
 <hr>
 <div class="card-columns animated fadeIn">
-    <div *ngFor="let row of data;let i= index" class="card">
+    <div *ngFor="let row of data;let i= index" class="card "  >
       <div class="card-header"> {{row.name|nodata:'data'}} </div>
-      <img class="card-img-top" [src]="row.images[0]|nodata:'img'" alt="Card image cap">
+      <img class="card-img-top puntero" [src]="row.images[0]|nodata:'img'" alt="Card image cap" (click)="ver_data(row)">
       <div class="card-body">
         <h5 class="card-title">{{row.release_date|nodata:'data'}}</h5>
         <p class="card-text">
-            <a *ngFor="let item of row.artists" href="#" class="badge badge-primary">
+            <a *ngFor="let item of row.artists" href="#"  class="badge badge-primary" (click)="ver_artista(item.id)">
               {{item.name|nodata:'data'}}
             </a>
         </p>

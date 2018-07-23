@@ -21,7 +21,7 @@ export class SearchComponent implements OnInit {
     if (_data !== '' || _data !== null ) {
       console.warn('*************buscar************');
       this.loading = true;
-      this.SSpotify.get_artista(_data).subscribe((data: any) => {
+      this.SSpotify.get_artistas(_data).subscribe((data: any) => {
         this.artist = data;
         this.loading = false;
         console.log(this.artist);
