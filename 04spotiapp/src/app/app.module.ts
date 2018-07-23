@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 // rutas
 import { AppRoutingModule } from './app-routing.module';
 import { SpotifyService } from './services/spotify.service';
+import { NodataPipe } from './pipe/nodata.pipe';
 
 
 
@@ -20,7 +21,8 @@ import { SpotifyService } from './services/spotify.service';
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    NodataPipe
   ],
   imports: [
     HttpClientModule,

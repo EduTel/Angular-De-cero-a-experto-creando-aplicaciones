@@ -16,7 +16,6 @@ export class SearchComponent implements OnInit {
     console.warn(_data);
     this.SSpotify.get_artista(_data).subscribe((data: any) => {
       this.artist = data;
-      // this.releases = data;
       console.log(this.artist);
     });
   }
