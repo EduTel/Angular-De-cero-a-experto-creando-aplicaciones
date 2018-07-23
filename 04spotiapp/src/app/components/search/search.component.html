@@ -1,3 +1,21 @@
-<h1>
-  search works!
-</h1>
+<div class="row">
+  <div class="col">
+    <input #inputSearch type="text" (keyup)='search(inputSearch.value)' class="form-control" placeholder="Seach">
+  </div>
+</div>
+<hr>
+<div class="card-columns">
+    <!--<div *ngFor="let row of releases.albums.items" class="card">-->
+    <div *ngFor="let row of artist" class="card">
+      <div class="card-header"> {{row.name}} </div>
+      <img class="card-img-top" [src]="row.images[0].url" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">followers: {{row.followers.total|number}}</h5>
+        <!-- <p class="card-text">
+            <a *ngFor="let item of row.artists" href="#" class="badge badge-primary">
+              {{item.name}}
+            </a>
+        </p> -->
+      </div>
+    </div>
+  </div>
