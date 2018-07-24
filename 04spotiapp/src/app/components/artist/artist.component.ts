@@ -10,18 +10,26 @@ import { ActivatedRoute } from '@angular/router';
 export class ArtistComponent implements OnInit {
   artist: any[];
   loading = true;
+  top_tranks: any[];
   constructor(private _activatedRoute: ActivatedRoute, private _SpotifyService: SpotifyService ) {
     this._activatedRoute.params.subscribe((datos) => {
       console.log('ArtistComponent constructor');
       console.log(datos);
       this.get_artista(datos['id']);
+      this.get_top_tranks(datos['id']);
     });
   }
-  get_artista(id: string) {
-    this._SpotifyService.get_artista(id).subscribe((data: any) => {
+  get_artista(_id: string) {
+    this._SpotifyService.get_artista(_id).subscribe((data: any) => {
       console.warn(data);
       this.loading = false;
       this.artist = data;
+    });
+  }
+  get_top_tranks(_id: string) {
+    this._SpotifyService.get_top_tranks(_id).subscribe((data: any) => {
+      console.warn(data);
+      this.top_tranks = data;
     });
   }
 

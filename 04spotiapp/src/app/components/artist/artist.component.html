@@ -1,25 +1,49 @@
 <app-loading *ngIf="loading" ></app-loading>
 <div *ngIf="!loading" class="row animated fadeIn">
-  <div class='col-2'>
-    <img [src]="artist.images[1] | nodata:'img'" class='img-thumbnail rounded-circle' alt="">
+  <div class="row">
+    <div class='col-2'>
+      <img [src]="artist.images[0] | nodata:'img'" class='img-thumbnail rounded-circle' alt="">
+    </div>
+    <div class='col-6'>
+      <h1>{{artist.name}}</h1>
+      <p>
+        <a href="{{artist.external_urls.spotify}}" target="_black">URL</a>
+      </p>
+      <hr>
+      <h2>Genres</h2>
+      <ul>
+        <li *ngFor="let item of artist.genres">
+          {{item}}
+        </li>
+      </ul>
+      <hr>
+      <h4>Followers:</h4>
+      <p>{{artist.followers.total|number}}</p>
+    </div>
+    <div class='col-4 text-right'>
+      <button type="button" routerLink="/search" class="btn btn-large btn-block btn-danger">Back</button>
+    </div>
   </div>
-  <div class='col-6'>
-    <h1>{{artist.name}}</h1>
-    <p>
-      <a href="{{artist.external_urls.spotify}}" target="_black">URL</a>
-    </p>
-    <hr>
-    <h2>Genres</h2>
-    <ul>
-      <li *ngFor="let item of artist.genres">
-        {{item}}
-      </li>
-    </ul>
-    <hr>
-    <h4>Followers:</h4>
-    <p>{{artist.followers.total|number}}</p>
-  </div>
-  <div class='col-4 text-right'>
-    <button type="button" routerLink="/search" class="btn btn-large btn-block btn-danger">Back</button>
-  </div>
+  <table class="table table-dark" *ngFor="let item of top_tranks">
+      <thead>
+        <tr>
+          <th scope="col">Foto</th>
+          <th scope="col">Album</th>
+          <th scope="col">Cancion</th>
+          <th scope="col">Vista previa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <img class='img-fluid' [src]="item.album.images[0] | nodata:'img'" alt="">
+          </th>
+          <td>{{item.album.name}}</td>
+          <td>{{item.name}}</td>
+          <td>
+            <audio [src]="item.preview_url" controls></audio>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 </div>
