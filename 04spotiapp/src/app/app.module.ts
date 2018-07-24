@@ -15,6 +15,7 @@ import { NodataPipe } from './pipe/nodata.pipe';
 import { CardComponent } from './components/shared/card/card.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { AlbumComponent } from './components/album/album.component';
+import { DomSecurePipe } from './pipe/dom-secure.pipe';
 
 
 
@@ -28,7 +29,8 @@ import { AlbumComponent } from './components/album/album.component';
     NodataPipe,
     CardComponent,
     LoadingComponent,
-    AlbumComponent
+    AlbumComponent,
+    DomSecurePipe
   ],
   imports: [
     HttpClientModule,
