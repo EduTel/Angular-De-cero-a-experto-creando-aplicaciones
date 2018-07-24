@@ -9,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   releases: any[];
   loading = true;
+  errores = false;
+  msg = '';
   constructor(private SSpotify: SpotifyService ) {
     this.SSpotify.get_new_releases().subscribe((data: any) => {
       this.releases = data;
       this.loading = false;
-      // console.log(this.releases);
+    }, (_error) => {
+      this.loading = false;
+      this.errores = true;
+      this.msg = _error.error.error['message'];
     });
   }
   ngOnInit() {
