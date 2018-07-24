@@ -1,3 +1,25 @@
-<p>
-  artist works!
-</p>
+<app-loading *ngIf="loading" ></app-loading>
+<div *ngIf="!loading" class="row">
+  <div class='col-2'>
+    <img [src]="artist.images[1] | nodata:'img'" class='img-thumbnail rounded-circle' alt="">
+  </div>
+  <div class='col-6'>
+    <h1>{{artist.name}}</h1>
+    <p>
+      <a href="{{artist.external_urls.spotify}}" target="_black">URL</a>
+    </p>
+    <hr>
+    <h2>Genres</h2>
+    <ul>
+      <li *ngFor="let item of artist.genres">
+        {{item}}
+      </li>
+    </ul>
+    <hr>
+    <h4>Followers:</h4>
+    <p>{{artist.followers.total|number}}</p>
+  </div>
+  <div class='col-4 text-right'>
+    <button type="button" routerLink="/search" class="btn btn-large btn-block btn-danger">Back</button>
+  </div>
+</div>

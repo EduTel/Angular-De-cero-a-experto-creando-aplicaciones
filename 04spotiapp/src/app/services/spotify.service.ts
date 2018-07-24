@@ -12,7 +12,7 @@ export class SpotifyService {
   get_query(_query: string) {
     const httpOptions = {
       headers: new HttpHeaders({
-        Authorization: 'Bearer BQAOYnb3UqG8JkxdgGqh0Rx6Lh_pkPStFxqn3lppgKRHiYXOD0SromxxS77lYKrnAJuyAj9AmcRL1y2mFKw'
+        Authorization: 'Bearer BQCEUYTf7YyfkRNusnwL2qPyQFMB0or-_xkciiGI56m0YRjE1jpZKGmxhGjW1Y3Wq3AD464nJ0s8q29KUiQ'
       })
     };
     const url = `https://api.spotify.com/v1/${_query}`;
@@ -23,18 +23,21 @@ export class SpotifyService {
       map( (data) => data['albums'].items )
     );
   }
-  get_artistas(_termino: string) {
-    return this.get_query(`search?q=${encodeURI(_termino)}&type=artist&limit=15`).pipe(
-      map( (data) => data['artists'].items)
-    );
-  }
   get_album(_id: string) {
     return this.get_query(`albums/${_id}`).pipe(
       map((data) => data)
     );
   }
+  get_artistas(_termino: string) {
+    return this.get_query(`search?q=${encodeURI(_termino)}&type=artist&limit=15`).pipe(
+      map( (data) => data['artists'].items)
+    );
+  }
   get_artista(_id: string) {
-    return this.get_query(`artists/${_id}`).pipe(
+    return this.get_query(`artists/${_id}`);
+  }
+  get_top_tranks(_id: string) {
+    return this.get_query(`artists/${_id}/top-tracks`).pipe(
       map((data) => data)
     );
   }
