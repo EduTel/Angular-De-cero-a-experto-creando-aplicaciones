@@ -14,6 +14,7 @@ import { SpotifyService } from './services/spotify.service';
 import { NodataPipe } from './pipe/nodata.pipe';
 import { CardComponent } from './components/shared/card/card.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { AlbumComponent } from './components/album/album.component';
 
 
 
@@ -26,7 +27,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     NodataPipe,
     CardComponent,
-    LoadingComponent
+    LoadingComponent,
+    AlbumComponent
   ],
   imports: [
     HttpClientModule,
