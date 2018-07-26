@@ -22,6 +22,20 @@ git reset --hard HEAD~1
 git reset --soft HEAD~1  
 git push -f origin master  
 
+git remote -v  
+ionic git remote  
+git remote rm ionic  
+git remote set-url origin https://github.com/EduTel/Angular-De-cero-a-experto-creando-aplicaciones.git  
+git remote add origin https://github.com/EduTel/Angular-De-cero-a-experto-creando-aplicaciones.git  
+git push --set-upstream origin master  
+git pull  
+github.com1  
+git pull origin master  
+ionic link  
+https://git-scm.com/docs/git-remote  
+
+
+
 ***Typescript***
 tsc name.ts  
 tsc name.ts -watch  
@@ -45,14 +59,25 @@ tsc
 * ***Crear servicio***  
 **ng g s folder/name --spec=false**  
 
-***Dictionary***
+***Dictionary***  
 * Grave accent  
 * ECMAScript 6 is also known as ES6 and ECMAScript 2015  
 
-***preguntas***
-**JSLint, JSHint y ESlist**
+***Ionic***  
+sudo npm install -g ionic  
+ionic login  
+ionic ssh setup  
+ionic serve  
+* ***para correrlo desde ionic devapp***  
+ionic serve -c  
+* ***to connect the app with the Ionic Dashboard***  
+ionic link  
 
-***Links***
+
+***preguntas***  
+**JSLint, JSHint y ESlist**  
+
+***Links***  
 https://angular.io/guide/router  
 https://angular.io/guide/http  
 https://angular.io/guide/structural-directives  
