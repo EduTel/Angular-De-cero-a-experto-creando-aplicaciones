@@ -27,9 +27,9 @@
               "src/assets/fontawesome5/css/all.css"
             ],
             "scripts": [
-              "src/assets/bootstrap4/bootstrap.js",
               "src/assets/jquery-3.3.1.js",
-              "src/assets/popper.js"
+              "src/assets/popper.js",
+              "src/assets/bootstrap4/bootstrap.js"
             ]
           },
           "configurations": {
