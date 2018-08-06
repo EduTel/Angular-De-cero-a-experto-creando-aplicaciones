@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StyleEditableComponent } from './style-editable/style-editable.component';
+import { StyleEditableComponent } from './components/style-editable/style-editable.component';
+import { CssComponent } from './components/css/css.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StyleEditableComponent
+    StyleEditableComponent,
+    CssComponent
   ],
   imports: [
     BrowserModule
