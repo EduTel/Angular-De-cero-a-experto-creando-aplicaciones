@@ -1,0 +1,18 @@
+<div [ngClass]="typeAlert" class="alert" role="alert">
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, molestiae deserunt ex corrupti neque vitae in laborum laboriosam. Nam at nulla accusantium doloremque quis deserunt maxime itaque sit quasi unde!
+</div>
+<button type="button" class="btn btn-outline-primary" (click)='typeAlert="alert-primary" ' >alert-primary</button>
+<button type="button" class="btn btn-outline-primary" (click)='typeAlert="alert-secondary" ' >alert-secondary</button>
+<button type="button" class="btn btn-outline-primary" (click)='typeAlert="alert-success" ' >alert-success</button>
+<button type="button" class="btn btn-outline-primary" (click)='typeAlert="alert-danger" ' >alert-danger</button>
+<button type="button" class="btn btn-outline-primary" (click)='typeAlert="alert-warning" ' >alert-warning</button>
+<button type="button" class="btn btn-outline-primary" (click)='typeAlert="alert-info" ' >alert-info</button>
+<button type="button" class="btn btn-outline-primary" (click)='typeAlert="alert-light" ' >alert-light</button>
+<button type="button" class="btn btn-outline-primary" (click)='typeAlert="alert-dark" ' >alert-dark</button>
+<br>
+<br>
+<i  [ngClass]="{'fa-smile-beam': typeMood}" class='fas'></i>
+<i  [ngClass]="{'fa-frown': !typeMood}" class='fas'></i>
+<br>
+<button type="button" class="btn btn-outline-primary" (click)='typeMood=!typeMood'>clear</button>
+
