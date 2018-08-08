@@ -6,6 +6,8 @@ import { StyleEditableComponent } from './components/style-editable/style-editab
 import { CssComponent } from './components/css/css.component';
 import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { AsyncComponent } from './components/async/async.component';
+import { MarkDirective } from './directivesPersonalized/mark.directive';
+import { DirectivesPersonalizedComponent } from './components/directives-personalized/directives-personalized.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { AsyncComponent } from './components/async/async.component';
     StyleEditableComponent,
     CssComponent,
     NgClassComponent,
-    AsyncComponent
+    AsyncComponent,
+    MarkDirective,
+    DirectivesPersonalizedComponent
   ],
   imports: [
     BrowserModule

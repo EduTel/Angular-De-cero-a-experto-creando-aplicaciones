@@ -17,3 +17,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * ***ng serve -o***  
 * ng g c miComponent -it -is
 * 
+##url  
+* https://angular.io/guide/attribute-directives  
