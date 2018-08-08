@@ -8,6 +8,7 @@ import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { AsyncComponent } from './components/async/async.component';
 import { MarkDirective } from './directivesPersonalized/mark.directive';
 import { DirectivesPersonalizedComponent } from './components/directives-personalized/directives-personalized.component';
+import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DirectivesPersonalizedComponent } from './components/directives-persona
     NgClassComponent,
     AsyncComponent,
     MarkDirective,
-    DirectivesPersonalizedComponent
+    DirectivesPersonalizedComponent,
+    NgSwitchComponent
   ],
   imports: [
     BrowserModule
