@@ -4,12 +4,10 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
   selector: '[appMark]'
 })
 export class MarkDirective {
-
   constructor(private _ElementRef: ElementRef ) {
     console.log('appMark start');
     _ElementRef.nativeElement.style.backgroundColor = 'yellow';
   }
-
   @Input('appHighlight') c_highlightColor: string;
   @HostListener('mouseenter')
   mouseentro() {
