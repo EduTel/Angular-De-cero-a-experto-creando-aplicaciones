@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { StyleEditableComponent } from './components/style-editable/style-editable.component';
 import { CssComponent } from './components/css/css.component';
 import { NgClassComponent } from './components/ng-class/ng-class.component';
+import { AsyncComponent } from './components/async/async.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StyleEditableComponent,
     CssComponent,
-    NgClassComponent
+    NgClassComponent,
+    AsyncComponent
   ],
   imports: [
     BrowserModule

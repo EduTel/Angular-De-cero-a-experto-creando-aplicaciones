@@ -1,0 +1,5 @@
+<button type="button" (click)='ejecutar()' class="btn btn-primary" [disabled]="loading" >
+  <i [ngClass]="{'fab fa-telegram-plane': !loading,'fas fa-spinner fa-spin': loading }" class=""></i>
+   <span *ngIf="!loading" > send</span>
+   <span *ngIf="loading" > sending</span>
+</button>
