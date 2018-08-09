@@ -16,6 +16,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ##ng
 * ***ng serve -o***  
 * ng g c miComponent -it -is
-* 
+* ng generate module app-routing --flat --module=app
+
 ##url  
 * https://angular.io/guide/attribute-directives  
+* 
