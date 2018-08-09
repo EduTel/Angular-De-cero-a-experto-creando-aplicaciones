@@ -1,3 +1,9 @@
-<p>
-  usuario works!
-</p>
+<div class="col-md-12 text-center">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['nuevo']">nuevo</button>
+    <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['editar']">editar</button>
+    <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['detalle']">detalle</button>
+  </div>
+</div>
+<router-outlet></router-outlet>
+

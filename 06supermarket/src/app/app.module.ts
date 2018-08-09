@@ -12,6 +12,7 @@ import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
 import { HomeComponent } from './components/home/home.component';
 // router
 import { appRouting } from './/app-routing.module';
+// Component
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { UsuarioNuevoComponent } from './components/usuario/usuario-nuevo.component';
 import { UsuarioEditarComponent } from './components/usuario/usuario-editar.component';
