@@ -12,16 +12,17 @@
         </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="precios">Precios</a>
+        <a class="nav-link" routerLink="precios">price</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="protegido">Protegido</a>
+        <a class="nav-link" routerLink="protegido">protected</a>
       </li>
     </ul>
-
-    <span class="navbar-text" (click)='login()'>
+    <span *ngIf="!_AuthService.isAuthenticated()" class="navbar-text" (click)='_AuthService.login()'>
       <button type="button" class="btn btn-primary">Login</button>
     </span>
-
+    <span *ngIf="_AuthService.isAuthenticated()" class="navbar-text"  (click)='_AuthService.logout()'>
+      <button type="button" class="btn btn-primary">logout</button>
+    </span>
   </div>
 </nav>
