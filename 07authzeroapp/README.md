@@ -15,3 +15,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ***ng***
 ng generate module app-routing --flat --module=app
+ng g s services/auth

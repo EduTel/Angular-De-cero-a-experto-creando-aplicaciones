@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { PreciosComponent } from './components/precios/precios.component';
 import { ProtegidoComponent } from './components/protegido/protegido.component';
 import { appRouting } from './app-routing.module';
+// services
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { appRouting } from './app-routing.module';
     BrowserModule,
     appRouting
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
