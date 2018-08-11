@@ -14,7 +14,7 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="precios">price</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="_AuthService.isAuthenticated()">
         <a class="nav-link" routerLink="protegido">protected</a>
       </li>
     </ul>
