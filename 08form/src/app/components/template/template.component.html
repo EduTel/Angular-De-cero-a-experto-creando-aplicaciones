@@ -3,23 +3,23 @@
     <h4>Formularios <small>template</small></h4>
   </div>
   <hr>
-  <form (ngSubmit)="onSubmit()" class='col col-sm-12' novalidate>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm" class='col col-sm-12' novalidate>
     <div class="form-group row">
       <label class="col-2 col-form-label">Nombre</label>
       <div class="col-8">
-        <input class="form-control" type="text" placeholder="Nombre" name='nombre' ngModel minlength="5" required>
+        <input class="form-control" type="text" placeholder="Nombre" name='nombre' [(ngModel)]='c_usuario.nombre' minlength="5" required>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-2 col-form-label">Apellido</label>
       <div class="col-8">
-        <input class="form-control" type="text" placeholder="Apellido" name='lastName' ngModel>
+        <input class="form-control" type="text" placeholder="Apellido" name='lastName' [(ngModel)]='c_usuario.apellido'>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-2 col-form-label">Correo</label>
       <div class="col-md-8">
-        <input class="form-control" type="email" placeholder="Correo electrónico" name='mail' ngModel>
+        <input class="form-control" type="email" placeholder="Correo electrónico" name='mail' [(ngModel)]='c_usuario.mail'>
       </div>
     </div>
     <div class="form-group row">
