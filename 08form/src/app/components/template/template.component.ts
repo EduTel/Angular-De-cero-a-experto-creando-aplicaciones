@@ -4,20 +4,20 @@ import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
-  styles: [`
-    input.ng-touched.ng-invalid {
-      border: 1px solid red;
-    }
-    form.ng-touched.ng-valid {
-      border: 1px solid green;
-    }
-    input.ng-touched.ng-valid {
-      border: 1px solid green;
-    }
-    .msg_error{
-      color: red;
-    }
-  `]
+  // styles: [`
+  //  input.ng-touched.ng-invalid {
+  //    border: 1px solid red;
+  //  }
+  //  form.ng-touched.ng-valid {
+  //    border: 1px solid green;
+  //  }
+  //  input.ng-touched.ng-valid {
+  //    border: 1px solid green;
+  //  }
+  //  .msg_error{
+  //    color: red;
+  //  }
+  // `]
 })
 export class TemplateComponent implements OnInit {
   c_usuario: Object = {

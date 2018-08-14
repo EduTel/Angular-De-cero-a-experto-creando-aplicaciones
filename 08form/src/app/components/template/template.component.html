@@ -3,50 +3,44 @@
     <h4>Formularios <small>template</small></h4>
   </div>
   <hr>
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm" class='col col-sm-12' novalidate>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm" class='col col-sm-12 was-validated_' novalidate >
     <div class="form-group row">
       <label class="col-2 col-form-label">Nombre</label>
       <div class="col-8">
-        <input class="form-control" type="text" placeholder="Nombre" name='nombre' [(ngModel)]='c_usuario.nombre' minlength="5" required>
-      </div>
-    </div>
-    <div class="row">
-      <div class='row msg_error' *ngIf="mi_form!=null?mi_form.controls.nombre.errors?.required:'' " >
-        Este valor es requerido
-      </div>
-      <div class='row msg_error' *ngIf="mi_form!=null?mi_form.controls.nombre.errors?.minlength:'' " >
-        la longitud minima es de {{mi_form.controls.nombre.errors.minlength.requiredLength}}
+        <input class="form-control" [ngClass]="{'is-invalid': (nombre.errors?.minlength || nombre.errors?.required)&&nombre.touched }"  type="text" placeholder="Nombre" name='nombre' #nombre='ngModel' [(ngModel)]='c_usuario.nombre' minlength="5" required>
+        <div class='invalid-feedback' *ngIf="mi_form!=null?mi_form.controls.nombre.errors?.required:'' " >
+          Este valor es requerido
+        </div>
+        <div class='invalid-feedback' *ngIf="mi_form!=null?mi_form.controls.nombre.errors?.minlength:'' " >
+          la longitud minima es de {{mi_form.controls.nombre.errors.minlength.requiredLength}}
+        </div>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-2 col-form-label">Apellido</label>
       <div class="col-8">
-        <input class="form-control" type="text" placeholder="Apellido" #lastName='ngModel' name='lastName' [(ngModel)]='c_usuario.apellido' required>
-      </div>
-    </div>
-    <div class="row">
-      <div class='row msg_error' *ngIf="lastName.errors?.required" >
-        Este valor es requerido
+        <input class="form-control" [ngClass]="{'is-invalid': (lastName.errors?.required)&&nombre.touched }" type="text" placeholder="Apellido" #lastName='ngModel' name='lastName' [(ngModel)]='c_usuario.apellido' required>
+        <div class='invalid-feedback' *ngIf="lastName.errors?.required" >
+            Este valor es requerido
+          </div>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-2 col-form-label">Correo</label>
       <div class="col-md-8">
-        <input class="form-control" type="email" placeholder="Correo electrónico" #mail='ngModel' name='mail' [(ngModel)]='c_usuario.mail' required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-      </div>
-    </div>
-    <div class="row">
-      <div class='row msg_error' *ngIf="mail.errors?.required" >
-        Este valor es requerido
-      </div>
-      <div class='row msg_error' *ngIf="mail.errors?.pattern" >
-        No es un correo valido
+        <input class="form-control" [ngClass]="{'is-invalid': (mail.errors?.required || mail.errors?.pattern)&&nombre.touched }" type="email" placeholder="Correo electrónico" #mail='ngModel' name='mail' [(ngModel)]='c_usuario.mail' required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+        <div class='invalid-feedback' *ngIf="mail.errors?.required" >
+          Este valor es requerido
+        </div>
+        <div class='invalid-feedback' *ngIf="mail.errors?.pattern" >
+          No es un correo valido
+        </div>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-2 col-form-label">&nbsp;</label>
       <div class="input-group col-md-8">
-        <button type="submit" class="btn btn-outline-primary">
+        <button type="submit" class="btn btn-outline-primary" [disabled]='!f.valid' >
           Guardar
         </button>
       </div>
