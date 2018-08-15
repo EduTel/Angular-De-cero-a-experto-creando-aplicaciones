@@ -23,8 +23,38 @@ export class TemplateComponent implements OnInit {
   c_usuario: Object = {
     nombre: 'Mi nombre',
     apellido: 'Mi apellido',
-    mail: 'mimail@outlook.com'
+    mail: 'mimail@outlook.com',
+    pais: '',
+    sexo: 'M',
+    acepta: true
   };
+  c_paises: Object = [
+    {
+      codigo: 'AFG',
+      nombre: 'Afganistán'
+    }, {
+      codigo: 'ALA',
+      nombre: 'Islas de Åland'
+    }, {
+      codigo: 'AFG',
+      nombre: 'Albania'
+    }, {
+      codigo: 'DZA',
+      nombre: 'Argelia'
+    }, {
+      codigo: 'ASM',
+      nombre: 'Samoa Americana'
+    }
+  ];
+  c_sexos: Object = [
+    {
+      codigo: 'F',
+      nombre: 'Femenino'
+    }, {
+      codigo: 'M',
+      nombre: 'Masculino'
+    }
+  ];
   mi_form: NgForm;
   constructor() { }
 
