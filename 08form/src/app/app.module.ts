@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 // FormsModule
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+// ReactiveFormsModule
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TemplateComponent } from './components/template/template.component';
@@ -17,7 +19,8 @@ import { DataComponent } from './components/data/data.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

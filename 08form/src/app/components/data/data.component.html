@@ -2,72 +2,69 @@
   <div class="row">
     <div class='col col-sm-12'>
       <h4>Formularios
-        <small>data</small>
+        <small>
+          data
+          <a href="https://angular.io/guide/reactive-forms">Reactive Forms</a>
+        </small>
       </h4>
     </div>
-    <form class='col col-sm-12'>
+    <form class='col col-sm-12' [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <div class="form-group row">
         <label for="inputNombre" class="col-sm-2 col-form-label">Nombre</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+          <input [ngClass]="{'is-invalid': profileForm.controls.firstName.invalid}" class='form-control' type="text" id="inputNombre" placeholder="Nombre" formControlName="firstName">
+          <div class="invalid-feedback">
+            <div *ngIf="profileForm.controls.firstName.invalid && (profileForm.controls.firstName.dirty || profileForm.controls.firstName.touched)">
+              <div *ngIf="profileForm.controls.firstName.errors.required">
+                Name is required.
+              </div>
+              <div *ngIf="profileForm.controls.firstName.errors.minlength">
+                Name must be at least 4 characters long.
+              </div>
+              <div *ngIf="profileForm.controls.firstName.errors.forbiddenName">
+                Name cannot be Bob.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="form-group row">
         <label for="inputApellido" class="col-sm-2 col-form-label">Apellido</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+          <input type="text" required class="form-control" id="inputApellido" placeholder="Apellido" formControlName="lastName">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputCorreo" class="col-sm-2 col-form-label">Correo</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputCorreo" placeholder="Correo">
+          <input type="email" class="form-control" id="inputCorreo" placeholder="Correo" formControlName="mail">
         </div>
       </div>
       <div class="form-group row">
         <label class="col-2 col-form-label">&nbsp;</label>
         <div class="input-group col-md-8">
-          <button type="submit" class="btn btn-outline-primary">
+          <button type="submit" class="btn btn-outline-primary" [disabled]="!profileForm.valid">
             Guardar
           </button>
+          <button type="submit" class="btn btn-outline-primary" >
+              Guardar
+            </button>
         </div>
       </div>
     </form>
+    <div class="col sm 12">
+        <div *ngIf="profileForm.controls.firstName.invalid" class='border border-warning'>
+            firstName errors: <span class='text-danger'>{{profileForm.controls.firstName.errors | json}}</span> <br>
+            required: <span class='text-danger'>{{profileForm.controls.firstName.errors.required | json}}</span> <br>
+            minlength: <span class='text-danger'>{{profileForm.controls.firstName.errors.minlength | json}}</span> <br>
+        </div><br>
+        firstName value: <div class='text-danger' [innerHTML]="profileForm.get('firstName').value"></div> <br>
+        firstName invalid: <span class='text-danger'>{{profileForm.controls.firstName.invalid}}</span> <br>
+
+        profileForm.value: <span class='text-danger'> {{profileForm.value | json}} </span><br>
+        profileForm.valid: <span class='text-danger'> {{profileForm.valid }} </span>
+    </div>
   </div>
 </div>
 
-<!--
-  <form>
-    <div>
-      <div lass="form-group row">
-        <label class="col-2 col-form-label">Nombre</label>
-        <div class="col-8">
-          <input class="form-control" type="text" placeholder="Nombre">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label class="col-2 col-form-label">Apellido</label>
-        <div class="col-8">
-
-          <input class="form-control" type="text" placeholder="Apellido">
-        </div>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">Correo</label>
-      <div class="col-md-8">
-
-        <input class="form-control" type="email" placeholder="Correo electrónico">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">&nbsp;</label>
-      <div class="input-group col-md-8">
-        <button type="submit" class="btn btn-outline-primary">
-          Guardar
-        </button>
-      </div>
-    </div>
-  </form>
--->
 
