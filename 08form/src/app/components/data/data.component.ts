@@ -12,8 +12,8 @@ export class DataComponent implements OnInit {
   constructor() {
     this.profileForm = new FormGroup({
       firstName: new FormControl('Nancy', [ Validators.required, Validators.minLength(4), ]),
-      lastName: new FormControl(''),
-      mail: new FormControl(''),
+      lastName: new FormControl('', [Validators.required]),
+      mail: new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
     });
   }
 
