@@ -9,33 +9,37 @@
       </h4>
     </div>
     <form class='col col-sm-12' [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-      <div class="form-group row">
-        <label for="inputNombre" class="col-sm-2 col-form-label">Nombre</label>
-        <div class="col-sm-10">
-          <input [ngClass]="{'is-invalid': profileForm.controls.firstName.invalid}" class='form-control' type="text" id="inputNombre" placeholder="Nombre" formControlName="firstName">
-          <div class="invalid-feedback">
-            <div *ngIf="profileForm.controls.firstName.invalid && (profileForm.controls.firstName.dirty || profileForm.controls.firstName.touched)">
-              <div *ngIf="profileForm.controls.firstName.errors.required">
-                Name is required.
-              </div>
-              <div *ngIf="profileForm.controls.firstName.errors.minlength">
-                Name must be at least 4 characters long.
-              </div>
-              <div *ngIf="profileForm.controls.firstName.errors.forbiddenName">
-                Name cannot be Bob.
+      <div formGroupName="nombreCompleto" >
+        <div class="form-group row">
+          <label for="inputNombre" class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input [ngClass]="{'is-invalid': profileForm.get('nombreCompleto.firstName').invalid && (profileForm.get('nombreCompleto.firstName').dirty || profileForm.get('nombreCompleto.firstName').touched)}"
+                   class='form-control' type="text" id="inputNombre" placeholder="Nombre" formControlName="firstName">
+            <div class="invalid-feedback">
+              <div *ngIf="profileForm.get('nombreCompleto.firstName').invalid && (profileForm.get('nombreCompleto.firstName').dirty || profileForm.get('nombreCompleto.firstName').touched)">
+                <div *ngIf="profileForm.get('nombreCompleto.firstName').errors.required">
+                  Name is required.
+                </div>
+                <div *ngIf="profileForm.controls.nombreCompleto.controls.firstName.errors.minlength">
+                  Name must be at least 4 chara cters long.
+                </div>
+                <div *ngIf="profileForm.controls.nombreCompleto.controls.firstName.errors.forbiddenName">
+                  Name cannot be Bob.
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="inputApellido" class="col-sm-2 col-form-label">Apellido</label>
-        <div class="col-sm-10">
-          <input type="text" required class="form-control" id="inputApellido" placeholder="Apellido" formControlName="lastName">
-          <div class="invalid-feedback">
-            <div *ngIf="profileForm.get('lastName').invalid && (profileForm.get('lastName').dirty || profileForm.get('lastName').touched)">
-              <div *ngIf="profileForm.get('lastName').errors.required">
-                Apellido is required.
+        <div class="form-group row">
+          <label for="inputApellido" class="col-sm-2 col-form-label">Apellido</label>
+          <div class="col-sm-10">
+            <input [ngClass]="{'is-invalid': profileForm.get('nombreCompleto.lastName').invalid && (profileForm.get('nombreCompleto.lastName').dirty || profileForm.get('nombreCompleto.lastName').touched)}"
+                    type="text" required class="form-control" id="inputApellido" placeholder="Apellido" formControlName="lastName">
+            <div class="invalid-feedback">
+              <div *ngIf="profileForm.get('nombreCompleto.lastName').invalid && (profileForm.get('nombreCompleto.lastName').dirty || profileForm.get('nombreCompleto.lastName').touched)">
+                <div *ngIf="profileForm.get('nombreCompleto.lastName').errors.required">
+                  Apellido is required.
+                </div>
               </div>
             </div>
           </div>
@@ -44,7 +48,18 @@
       <div class="form-group row">
         <label for="inputCorreo" class="col-sm-2 col-form-label">Correo</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputCorreo" placeholder="Correo" formControlName="mail">
+          <input  [ngClass]="{'is-invalid': profileForm.get('mail').invalid && (profileForm.get('mail').dirty || profileForm.get('mail').touched)}"
+                  type="email" class="form-control" id="inputCorreo" placeholder="Correo" formControlName="mail">
+          <div class="invalid-feedback">
+              <div *ngIf="profileForm.get('mail').invalid && (profileForm.get('mail').dirty || profileForm.get('mail').touched)">
+                <div *ngIf="profileForm.get('mail').errors.required">
+                    mail is required.
+                </div>
+                <div *ngIf="profileForm.controls.mail.errors.pattern">
+                  No es un correo valido
+                </div>
+              </div>
+            </div>
         </div>
       </div>
       <div class="form-group row">
@@ -60,10 +75,11 @@
       </div>
     </form>
     <div class="col sm 12">
-        <div *ngIf="profileForm.invalid" class='border border-warning'>
-            firstName errors: <span class='text-danger'>{{profileForm.controls.firstName.errors | json}}</span> <br>
-            lastName errors: <span class='text-danger'>{{profileForm.controls.lastName.errors | json}}</span> <br>
-            mail errors: <span class='text-danger'>{{profileForm.controls.mail.errors | json}}</span> <br>
+      {{profileForm}}
+        <!-- <div *ngIf="profileForm.invalid" class='border border-warning'>
+            firstName errors: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.firstName.errors | json}}</span> <br>
+            lastName errors: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.lastName.errors | json}}</span> <br>
+            mail errors: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.mail.errors | json}}</span> <br>
         </div>
         <hr>
         <div *ngIf="profileForm.controls.firstName.invalid" class='border border-warning'>
@@ -74,7 +90,7 @@
         firstName invalid: <span class='text-danger'>{{profileForm.controls.firstName.invalid}}</span> <br>
 
         profileForm.value: <span class='text-danger'> {{profileForm.value | json}} </span><br>
-        profileForm.valid: <span class='text-danger'> {{profileForm.valid }} </span>
+        profileForm.valid: <span class='text-danger'> {{profileForm.valid }} </span> -->
     </div>
   </div>
 </div>
