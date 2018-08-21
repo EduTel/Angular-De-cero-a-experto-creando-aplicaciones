@@ -69,28 +69,32 @@
             Guardar
           </button>
           <button type="submit" class="btn btn-outline-primary" >
-              Guardar
-            </button>
+            Guardar
+          </button>
+          <button (click)="reset()" class="btn btn-outline-primary">
+            Reset
+          </button>
         </div>
       </div>
     </form>
     <div class="col sm 12">
-      {{profileForm}}
-        <!-- <div *ngIf="profileForm.invalid" class='border border-warning'>
+        {{profileForm.invalid | json}}
+        <div *ngIf="profileForm.invalid" class='border border-warning'>
             firstName errors: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.firstName.errors | json}}</span> <br>
-            lastName errors: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.lastName.errors | json}}</span> <br>
-            mail errors: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.mail.errors | json}}</span> <br>
+            lastName errors:  <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.lastName.errors | json}}</span> <br>
+            mail errors:      <span class='text-danger'>{{profileForm.controls.mail.errors | json}}</span> <br>
         </div>
         <hr>
-        <div *ngIf="profileForm.controls.firstName.invalid" class='border border-warning'>
-            required: <span class='text-danger'>{{profileForm.controls.firstName.errors.required | json}}</span> <br>
-            minlength: <span class='text-danger'>{{profileForm.controls.firstName.errors.minlength | json}}</span> <br>
-        </div><br>
-        firstName value: <div class='text-danger' [innerHTML]="profileForm.get('firstName').value"></div> <br>
-        firstName invalid: <span class='text-danger'>{{profileForm.controls.firstName.invalid}}</span> <br>
+        <div *ngIf="profileForm.controls.nombreCompleto.controls.firstName.invalid" class='border border-warning'>
+            required: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.firstName.errors.required | json}}</span> <br>
+            minlength: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.firstName.errors.minlength | json}}</span> <br>
+        </div>
+        <br>
+        firstName value: <div class='text-danger' [innerHTML]="profileForm.get('nombreCompleto.firstName').value"></div> <br>
+        firstName invalid: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.firstName.invalid}}</span> <br>
 
         profileForm.value: <span class='text-danger'> {{profileForm.value | json}} </span><br>
-        profileForm.valid: <span class='text-danger'> {{profileForm.valid }} </span> -->
+        profileForm.valid: <span class='text-danger'> {{profileForm.valid }} </span>
     </div>
   </div>
 </div>

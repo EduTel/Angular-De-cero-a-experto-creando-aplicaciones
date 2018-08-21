@@ -11,24 +11,24 @@ export class DataComponent implements OnInit {
   profileForm: FormGroup;
   profileForm_O: any   = {
     nombreCompleto: {
-      firstName: '',
+      firstName: 'Nancy',
       lastName: ''
     },
-    mail: ''
+    mail: 'example@outlook.com'
   };
   constructor() {
     console.warn(this.profileForm_O);
     this.profileForm = new FormGroup({
       nombreCompleto: new FormGroup(
         {
-          firstName: new FormControl('Nancy', [ Validators.required, Validators.minLength(4), ]),
+          firstName: new FormControl('', [ Validators.required, Validators.minLength(4), ]),
           lastName: new FormControl('', [Validators.required]),
         }
       ),
       mail: new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
     });
+    this.profileForm.setValue(this.profileForm_O);
   }
-
   ngOnInit() {
   }
   onSubmit() {
@@ -36,6 +36,10 @@ export class DataComponent implements OnInit {
     console.warn(this.profileForm);
     // console.warn(this.profileForm.controls.nombreCompleto.value.firstName);
     // console.warn(this.profileForm.value);
+  }
+  reset() {
+    this.profileForm.reset(this.profileForm_O);
+    this.profileForm.get('nombreCompleto.firstName').setValue('Nancy_');
   }
 
 }
