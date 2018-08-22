@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { forbiddenNameValidator } from './../forbidden.directive';
 
 @Component({
   selector: 'app-data',
