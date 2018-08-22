@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-data',
@@ -26,8 +26,11 @@ export class DataComponent implements OnInit {
         }
       ),
       mail: new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
+      cursos : new FormArray([
+        new FormControl('', Validators.required)
+     ])
     });
-    this.profileForm.setValue(this.profileForm_O);
+    // this.profileForm.setValue(this.profileForm_O);
   }
   ngOnInit() {
   }
@@ -41,5 +44,15 @@ export class DataComponent implements OnInit {
     this.profileForm.reset(this.profileForm_O);
     this.profileForm.get('nombreCompleto.firstName').setValue('Nancy_');
   }
+  /*Patching the model value*/
+  updateProfile() {
+    this.profileForm.patchValue(this.profileForm_O);
+  }
+  addAlias() {
+    (<FormArray>this.profileForm.controls['cursos']).push(
+      new FormControl('', [Validators.required])
+    );
+  }
+
 
 }
