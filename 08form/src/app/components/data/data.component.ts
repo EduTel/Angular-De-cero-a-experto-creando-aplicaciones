@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
-import { forbiddenNameValidator } from './../forbidden.directive';
+import { identityRevealedValidator, forbiddenNameValidator } from './../forbidden.directive';
 
 @Component({
   selector: 'app-data',
@@ -22,7 +22,11 @@ export class DataComponent implements OnInit {
     this.profileForm = new FormGroup({
       nombreCompleto: new FormGroup(
         {
-          firstName: new FormControl('', [ Validators.required, Validators.minLength(4), ]),
+          firstName: new FormControl(
+            '',
+            [ Validators.required, Validators.minLength(4),
+              forbiddenNameValidator(/^eduardo$/i) // <-- Here's how you pass in the custom validator.
+         ]),
           lastName: new FormControl('', [Validators.required]),
         }
       ),
@@ -30,7 +34,7 @@ export class DataComponent implements OnInit {
       cursos : new FormArray([
         new FormControl('', Validators.required)
      ])
-    });
+    }, { validators: identityRevealedValidator });
     // this.profileForm.setValue(this.profileForm_O);
   }
   ngOnInit() {
