@@ -104,7 +104,7 @@
       </div>
     </form>
     <div class="col sm 12">
-        invalid: {{profileForm.invalid | json}}
+        profileForm.invalid: {{profileForm.invalid | json}}
         <div *ngIf="profileForm.invalid" class='border border-warning'>
             firstName errors: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.firstName.errors | json}}</span> <br>
             lastName errors:  <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.lastName.errors | json}}</span> <br>
@@ -112,12 +112,14 @@
             cursos errors:      <span class='text-danger'>{{profileForm.controls.cursos.errors | json}}</span> <br>
         </div>
         <hr>
+        <!--
         <div *ngIf="profileForm.controls.nombreCompleto.controls.firstName.invalid" class='border border-warning'>
             required: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.firstName.errors.required | json}}</span> <br>
             minlength: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.firstName.errors.minlength | json}}</span> <br>
         </div>
         <br>
-        firstName value: <div class='text-danger' [innerHTML]="profileForm.get('nombreCompleto.firstName').value"></div> <br>
+        -->
+        firstName value: <div class='text-danger' [innerHTML]="profileForm.get('nombreCompleto.firstName').value"></div>
         firstName invalid: <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.firstName.invalid}}</span> <br>
 
         profileForm.value: <span class='text-danger'> {{profileForm.value | json}} </span><br>
