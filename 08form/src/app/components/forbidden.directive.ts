@@ -11,7 +11,7 @@ export const identityRevealedValidator: ValidatorFn = (control: FormGroup): Vali
   // console.warn('identityRevealedValidator: ' + control.get('nombreCompleto.firstName'));
   // console.warn('identityRevealedValidator: ' + control.get('nombreCompleto.lastName'));
   // console.warn('identityRevealedValidator: ' + control.get('mail'));
-  return firstName && lastName && mail ? { 'identityRevealed': true } : null;
+  return firstName == firstName.toUpperCase() && lastName == lastName.toUpperCase() && mail == mail.toUpperCase() ? { 'identityRevealed': true } : null;
 };
 
 /** A hero's name can't match the given regular expression */
