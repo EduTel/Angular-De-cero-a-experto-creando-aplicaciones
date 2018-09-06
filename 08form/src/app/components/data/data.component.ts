@@ -33,9 +33,16 @@ export class DataComponent implements OnInit {
       mail: new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
       cursos : new FormArray([
         new FormControl('', Validators.required)
-     ])
+      ]),
+      password1: new FormControl('', Validators.required),
+      password2: new FormControl('')
+
     }, { validators: identityRevealedValidator });
     // this.profileForm.setValue(this.profileForm_O);
+    this.profileForm.controls['password2'].setValidators([
+      Validators.required,
+      this.equal_data.bind(this.profileForm)
+    ])
   }
   ngOnInit() {
   }
@@ -58,6 +65,16 @@ export class DataComponent implements OnInit {
       new FormControl('', [Validators.required])
     );
   }
-
+  equal_data (control: AbstractControl): {[key: string]: boolean}{
+    console.warn('forbiddenNameValidator: ' + control.value);
+    console.log(this);
+    let forma:any = this;
+    if( control.value!==forma.controls['password1'].value ){
+      return {
+        noigual: true
+      }
+    }
+    return  null;
+  };
 
 }

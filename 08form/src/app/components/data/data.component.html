@@ -62,6 +62,37 @@
             </div>
         </div>
       </div>
+      <div class="form-group row">
+        <label for="inputCorreo" class="col-sm-2 col-form-label">pwd1</label>
+        <div class="col-sm-10">
+          <input  [ngClass]="{'is-invalid': profileForm.get('password1').invalid && (profileForm.get('password1').dirty || profileForm.get('password1').touched)}"
+                  type="password" class="form-control" id="inputpassword1" placeholder="password1" formControlName="password1">
+          <div class="invalid-feedback">
+              <div *ngIf="profileForm.get('password1').invalid && (profileForm.get('password1').dirty || profileForm.get('password1').touched)">
+                <div *ngIf="profileForm.get('password1').errors.required">
+                  password1 is required.
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputCorreo" class="col-sm-2 col-form-label">pwd2</label>
+        <div class="col-sm-10">
+          <input  [ngClass]="{'is-invalid': profileForm.get('password2').invalid && (profileForm.get('password2').dirty || profileForm.get('password2').touched)}"
+                  type="password" class="form-control" id="inputpassword2" placeholder="password2" formControlName="password2">
+          <div class="invalid-feedback">
+              <div *ngIf="profileForm.get('password2').invalid && (profileForm.get('password2').dirty || profileForm.get('password2').touched)">
+                <div *ngIf="profileForm.get('password2').errors.required">
+                  password1 is required.
+                </div>
+                <div *ngIf="profileForm.controls.password2.errors.noigual">
+                  No es igual
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
       <div class="form-group row" formArrayName="cursos">
           <label for="inputCursos0" class="col-sm-2 col-form-label">Cursos</label>
           <button (click)='addAlias()' class="col-sm-2 btn btn-outline-primary">
@@ -110,6 +141,8 @@
             lastName errors:  <span class='text-danger'>{{profileForm.controls.nombreCompleto.controls.lastName.errors | json}}</span> <br>
             mail errors:      <span class='text-danger'>{{profileForm.controls.mail.errors | json}}</span> <br>
             cursos errors:      <span class='text-danger'>{{profileForm.controls.cursos.errors | json}}</span> <br>
+            pwd1:      <span class='text-danger'>{{profileForm.controls.password1.errors | json}}</span> <br>
+            pwd1:      <span class='text-danger'>{{profileForm.controls.password2.errors | json}}</span> <br>
         </div>
         <hr>
         <!--
