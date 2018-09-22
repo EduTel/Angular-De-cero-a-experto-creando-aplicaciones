@@ -45,6 +45,21 @@ export class DataComponent implements OnInit {
       Validators.required,
       this.equal_data.bind(this.profileForm)
     ])
+    this.profileForm.valueChanges.subscribe(data=>{
+      console.log("___________0");
+      console.log(data);
+      console.log("___________1");
+    });
+    this.profileForm.controls.username.valueChanges.subscribe(data=>{
+      console.log("___________0");
+      console.error(data);
+      console.log("___________1");
+    });
+    this.profileForm.get("username").statusChanges.subscribe(data=>{
+      console.log("___________0");
+      console.error(data);
+      console.log("___________1");
+    });
   }
   ngOnInit() {
   }
