@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray, AbstractControl } from '@angular/forms';
 import { identityRevealedValidator, forbiddenNameValidator } from './../forbidden.directive';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-data',
@@ -34,6 +35,7 @@ export class DataComponent implements OnInit {
       cursos : new FormArray([
         new FormControl('', Validators.required)
       ]),
+      username: new FormControl('', Validators.required,this.existeUsuario),
       password1: new FormControl('', Validators.required),
       password2: new FormControl('')
 
@@ -76,5 +78,17 @@ export class DataComponent implements OnInit {
     }
     return  null;
   };
+  existeUsuario(control:FormControl):Promise<any>|Observable<any>{
+    var p1 = new Promise( (resolve,reject)=>{
+        setTimeout(() => {
+          if( control.value==="Eduardo" ){
+            resolve({exite:true})
+          }else{
+            resolve(null);
+          }
+        }, 3000);
+    });
+    return p1;
+  }
 
 }
