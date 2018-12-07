@@ -50,10 +50,10 @@ tsc
 **ng serve --open** || npm start 
 * ***Crear componente***  
 **ng generate component nuevo**  
-**ng g c components/foother -is**  
+**ng g c components/foother -is**  #inline estyle  
 **ng g c components/portafolio --spec=false -is**  
 * ***Crear router***  
-**ng generate module app-routing --flat --module=app**
+**ng generate module app-routing --flat --module=app** #--flat( no crea carpeta)
 * ***Crear pipe***  
 **ng generate pipe nuevo**  
 * ***Crear servicio***  
