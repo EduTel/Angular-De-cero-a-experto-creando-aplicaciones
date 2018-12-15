@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// @import url('https://raw.githubusercontent.com/daneden/animate.css/master/animate.css');
 
 @Component({
   selector: 'app-root',

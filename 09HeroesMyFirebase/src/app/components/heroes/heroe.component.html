@@ -1,3 +1,33 @@
-<p>
-  heroe works!
-</p>
+<h3>Heroe <small>nombre...</small> </h3>
+<button [routerLink]="[ '/heroes' ]" type="button" class="btn btn-large btn-inline btn-danger">regresar</button>
+<button type="button" class="btn btn-large btn-inline btn-primary">regresar</button>
+<hr>
+<div class="row animated fadeIn fast">
+  <div class="col-md-12" >
+    <form action="" method="POST" role="form" (ngSubmit)="guardar()" #heroForm="ngForm">
+      <legend>Form title</legend>
+      <div class="form-group">
+        <label for="">Nombre</label>
+        <input type="text" class="form-control" id="" placeholder="Nombre del heroe">
+      </div>
+      <div class="form-group">
+        <label for="">Casa</label>
+        <select class="form-control" name="casa" id="casa">
+          <option value="Marvel">Marvel</option>
+          <option value="DC">DC</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Nombre</label>
+        <input type="text" class="form-control" id="" placeholder="Nombre del heroe">
+      </div>
+      <div class="form-group">
+        <label for="">Nombre</label>
+        <textarea name="bio" id="bio" class="form-control" rows="3" required="required" placeholder="Bio" ></textarea>
+        <!--<input type="text" class="form-control" id="" placeholder="Nombre del heroe">-->
+      </div>
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
+    </form>
+
+  </div>
+</div>
