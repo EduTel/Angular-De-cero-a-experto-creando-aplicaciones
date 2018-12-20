@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Heroe } from '../../Interfaces/heroe.interface';
 
 @Component({
   selector: 'app-heroe',
@@ -8,12 +9,18 @@ import { NgForm } from '@angular/forms';
 })
 export class HeroeComponent implements OnInit {
 
-  heroe: any = {
-
+  heroe: Heroe = {
+    nombre: '',
+    bio: '',
+    casa: 'Marvel'
   };
   constructor() { }
 
   ngOnInit() {
+  }
+
+  guardar() {
+    console.log(this.heroe);
   }
 
 }
