@@ -11,16 +11,16 @@ import { map, catchError } from 'rxjs/operators';
 export class HeroesService {
   fireUrl = 'https://mi-primer-proyecto-ac019.firebaseio.com/heroe.json';
   constructor(private http: Http) {}
-  nuevoHeroe(heroe: Heroe) {
-    const body = JSON.stringify( heroe );
+  nuevoHeroe(_heroe: Heroe) {
+    const body = JSON.stringify( _heroe );
     const headers = new Headers({
       'content-type' : 'application/json'
     });
     return this.http.post( this.fireUrl, body, { headers: headers } ).pipe(
       map(
         res => {
-          console.log(res.json());
-          return res.json();
+          console.log(res);
+          return res;
         }
       )
     );
