@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Heroe } from '../../Interfaces/heroe.interface';
 import { HeroesService } from '../../services/heroes.service';
 
@@ -17,7 +17,13 @@ export class HeroeComponent implements OnInit {
     bio: '',
     casa: 'Marvel'
   };
-  constructor(private _heroesService: HeroesService, private _router: Router) { }
+  new = false;
+  id: string;
+  constructor(private _heroesService: HeroesService, private _router: Router, private _ActivatedRoute: ActivatedRoute) {
+    this._ActivatedRoute.params.subscribe(data => {
+      console.log(data);
+    });
+  }
 
   ngOnInit() {
   }
