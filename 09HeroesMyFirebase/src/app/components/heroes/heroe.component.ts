@@ -32,5 +32,11 @@ export class HeroeComponent implements OnInit {
       }, error => console.log(error)
     );
   }
+  agregarNuevo(_NgForm: NgForm) {
+    this._router.navigate(['/heroe', 'nuevo']);
+    _NgForm.reset({
+      casa: 'Marvel'
+    });
+  }
 
 }
