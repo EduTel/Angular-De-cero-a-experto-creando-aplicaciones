@@ -27,12 +27,12 @@ export class HeroesService {
       )
     );
   }
-  actualizarHeroe(_heroe: Heroe, key$: string) {
+  actualizarHeroe(_heroe: Heroe, _key$: string) {
     const body = JSON.stringify( _heroe );
     const headers = new Headers({
       'content-type' : 'application/json'
     });
-    const url = `${this.heroeUrl}${key$}.json`;
+    const url = `${this.heroeUrl}${_key$}.json`;
     console.log(url);
     return this.http.put( url, body, { headers: headers } ).pipe(
       map(
@@ -40,6 +40,18 @@ export class HeroesService {
           console.log('==============================actualizarHeroe');
           console.log(res);
           return res;
+        }
+      )
+    );
+  }
+
+  getHeroe(_key$: string) {
+    const url = `${this.heroeUrl}${_key$}.json`;
+    return this.http.get(url).pipe(
+      map(
+        function(res) {
+          console.log('==============================get');
+          res.json();
         }
       )
     );
